@@ -1,16 +1,27 @@
 
-
-#先讀取現有檔案
+#檢查檔案是否存在
+import os #operation system
 products = []
-with open('products.csv', 'r', encoding='utf-8') as f: #'r':read, 'w':write
-	for line in f:
-		if 'product,price' in line:  #只要認到'product,price'就跳到下一回, 也就是這個字串不會被載入; break是跳出迴圈
-			continue
-		name, price = line.strip().split(',') #切割分隔
-		#name = s[0]
-		#price = s[1]
-		products.append([name, price]) #加入product裡
-print(products)
+
+if os.path.isfile('products.csv'):
+	print('yes, found the file')
+
+#讀取現有檔案
+	with open('products.csv', 'r', encoding='utf-8') as f: #'r':read, 'w':write
+		for line in f:
+			if 'product,price' in line:  #只要認到'product,price'就跳到下一回, 也就是這個字串不會被載入; break是跳出迴圈
+				continue
+			name, price = line.strip().split(',') #切割分隔
+			#name = s[0]
+			#price = s[1]
+			products.append([name, price]) #加入product裡
+	print(products)
+
+else:
+	print('no, can not found the file')
+
+
+
 
 #再讓使用者輸入
 while True:
