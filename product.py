@@ -23,3 +23,6 @@ print(products[0][0])
 #products[1][0] -> name2
 #products[1][1] -> price2
 
+for p in products:
+	print(p)          #p是在product裡的小清單
+	print(p[0])       #印出小清單裡的[0]
