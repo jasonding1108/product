@@ -21,8 +21,6 @@ else:
 	print('no, can not found the file')
 
 
-
-
 #再讓使用者輸入
 while True:
 	name = input('please input product name:')
